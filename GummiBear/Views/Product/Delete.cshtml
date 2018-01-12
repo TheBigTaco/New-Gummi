@@ -1,0 +1,12 @@
+﻿@model GummiBear.Models.Product
+
+@{
+    ViewData["Title"] = "Product Edit";
+    Layout = "_Layout";
+}
+
+<h1>Are you sure you want to delete @Model.Name?</h1>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete Product" />
+}

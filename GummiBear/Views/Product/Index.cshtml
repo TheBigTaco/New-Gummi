@@ -13,7 +13,7 @@
 
 @foreach(Product product in Model)
 {
-    <p>@product.Name</p>
+<p>@product.Name | @Html.ActionLink("Details", "Details", new { id = @product.ProductId }) | @Html.ActionLink("Edit", "Edit", new { id = @product.ProductId }) | @Html.ActionLink("Delete", "Delete", new { id = @product.ProductId })</p>
 }
 
 <p>

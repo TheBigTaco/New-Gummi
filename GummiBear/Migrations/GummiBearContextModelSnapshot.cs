@@ -42,7 +42,7 @@ namespace GummiBear.Migrations
 
                     b.Property<string>("ContentBody");
 
-                    b.Property<int?>("ProductId");
+                    b.Property<int>("ProductId");
 
                     b.Property<int>("Rating");
 
@@ -57,9 +57,10 @@ namespace GummiBear.Migrations
 
             modelBuilder.Entity("GummiBear.Models.Review", b =>
                 {
-                    b.HasOne("GummiBear.Models.Product")
+                    b.HasOne("GummiBear.Models.Product", "Product")
                         .WithMany("Reviews")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }

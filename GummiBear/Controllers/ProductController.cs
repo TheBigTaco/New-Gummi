@@ -58,5 +58,44 @@ namespace GummiBear.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Edit(int id)
+        {
+            Product thisProduct = productRepo.Products.FirstOrDefault(x => x.ProductId == id);
+            return View(thisProduct);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Product product)
+        {
+            productRepo.Edit(product);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Details(int id)
+        {
+            Product thisProduct = productRepo.Products.Include(product => product.Reviews).FirstOrDefault(x => x.ProductId == id);
+            return View(thisProduct);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            Product thisProduct = productRepo.Products.FirstOrDefault(x => x.ProductId == id);
+            return View(thisProduct);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            Product thisProduct = productRepo.Products.FirstOrDefault(x => x.ProductId == id);
+            productRepo.Remove(thisProduct);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult GetPicture(int id)
+        {
+            var thisPicture = productRepo.Products.FirstOrDefault(x => x.ProductId == id).Picture;
+            return File(thisPicture, "image/png");
+        }
     }
 }
