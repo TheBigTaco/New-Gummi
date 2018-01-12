@@ -7,11 +7,15 @@
 
 <h1>PRODUCTS</h1>
 
+<p>
+    @Html.ActionLink("Add Product", "Create")
+</p>
+
 @foreach(Product product in Model)
 {
     <p>@product.Name</p>
 }
 
 <p>
-    @Html.ActionLink("Home", "Index", "Home") asdfasdfasdfasdfasdfasdfadsfasdfasdfasdfasdfasdfadsfadfasdfasdfadsfasdfasdfasdfadsfadsfasdfasfdasdfadsfadsfasdfadsfadsfasdfasdfasdfasdfasdfasdfadsfadsfasdfasdfdfadfadsasdf
+    @Html.ActionLink("Home", "Index", "Home")
 </p>

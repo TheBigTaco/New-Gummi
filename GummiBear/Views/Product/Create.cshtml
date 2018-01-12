@@ -1,0 +1,35 @@
+﻿@model GummiBear.Models.Product
+
+@{
+    ViewData["Title"] = "Products";
+    Layout = "_Layout";
+}
+
+<h1>Add Product</h1>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <p>
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name)
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Cost)
+        @Html.TextBoxFor(model => model.Cost)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.Description)
+        @Html.TextBoxFor(model => model.Description)
+    </p>
+
+    <p>
+        Upload Image
+        <input type="file" id="Image" name="Image" />
+    </p>
+
+    <input type="submit" value="Enter Boss" />
+}
+<p>
+    @Html.ActionLink("Return to product list", "Index")
+</p>
