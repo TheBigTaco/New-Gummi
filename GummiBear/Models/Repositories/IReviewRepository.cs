@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GummiBear.Models.Repositories
+namespace GummiBear.Models
 {
     public interface IReviewRepository
     {
