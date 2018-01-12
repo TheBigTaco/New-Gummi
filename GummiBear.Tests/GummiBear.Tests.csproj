@@ -15,8 +15,4 @@
     <ProjectReference Include="..\GummiBear\GummiBear.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ControllerTests\" />
-  </ItemGroup>
-
 </Project>
