@@ -15,12 +15,14 @@
 <p>@Model.Cost</p>
 <p>@Model.Description</p>
 
-@foreach(var review in Model.Reviews)
+<p>@Html.ActionLink("Add Review", "Create", "Review")</p>
+@foreach (var review in Model.Reviews)
 {
     <h4>@review.Title</h4>
     <p>@review.Author</p>
     <h5>Rating: @review.Rating</h5>
     <p>@review.ContentBody</p>
+    <p>@Html.ActionLink("Edit Review", "Edit", "Review", new { id = review.ReviewId }) | @Html.ActionLink("Delete Review", "Delete", "Review", new { id = review.ReviewId })</p>
 }
 
-    <p>@Html.ActionLink("Return to product list", "Index")</p>
+<p>@Html.ActionLink("Return to product list", "Index")</p>
