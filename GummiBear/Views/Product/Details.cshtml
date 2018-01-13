@@ -15,7 +15,7 @@
 <p>@Model.Cost</p>
 <p>@Model.Description</p>
 
-<p>@Html.ActionLink("Add Review", "Create", "Review")</p>
+<p>@Html.ActionLink("Add Review", "Create", "Review", new { id = Model.ProductId })</p>
 @foreach (var review in Model.Reviews)
 {
     <h4>@review.Title</h4>

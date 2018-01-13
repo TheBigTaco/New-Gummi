@@ -1,5 +1,38 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model GummiBear.ViewModels.ProductReviews
+
 @{
+    ViewData["Title"] = "Review Create";
+    Layout = "_Layout";
 }
+
+<h1>Add Product</h1>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <p>
+        @Html.LabelFor(model => model.Review.Title)
+        @Html.TextBoxFor(model => model.Review.Title)
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Review.Author)
+        @Html.TextBoxFor(model => model.Review.Author)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.Review.Rating)
+        @Html.TextBoxFor(model => model.Review.Rating)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.Review.ContentBody)
+        @Html.TextBoxFor(model => model.Review.ContentBody)
+    </p>
+
+    <p>
+        @Html.HiddenFor(model => model.Review.ProductId, new { ProductId = Model.ProductId })
+    </p>
+    <input type="submit" value="Enter Boss" />
+}
+<p>
+    @Html.ActionLink("Return to product list", "Index")
+</p>
