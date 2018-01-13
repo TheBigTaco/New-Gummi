@@ -1,13 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace GummiBear.Tests
+namespace GummiBear.Tests.ModelTests
 {
     [TestClass]
-    public class UnitTest1
+    class ReviewTests
     {
         [TestMethod]
         public void TestMethod1()
         {
+
         }
     }
 }
