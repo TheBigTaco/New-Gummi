@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GummiBear", "GummiBear\GummiBear.csproj", "{19CA354A-A0C9-4848-919E-DACECB4744C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GummiBear.Tests", "GummiBear.Tests\GummiBear.Tests.csproj", "{0FA460A9-6B9B-4D38-9507-AD83395705B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{19CA354A-A0C9-4848-919E-DACECB4744C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19CA354A-A0C9-4848-919E-DACECB4744C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19CA354A-A0C9-4848-919E-DACECB4744C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FA460A9-6B9B-4D38-9507-AD83395705B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FA460A9-6B9B-4D38-9507-AD83395705B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FA460A9-6B9B-4D38-9507-AD83395705B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FA460A9-6B9B-4D38-9507-AD83395705B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
