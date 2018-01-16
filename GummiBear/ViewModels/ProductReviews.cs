@@ -11,12 +11,13 @@ namespace GummiBear.ViewModels
     {
         private static EFProductRepository productRepo = new EFProductRepository();
 
-        public Review Review { get; set; }
+        public Review Review { get; set; } = new Review();
         public int ProductId { get; set; }
 
         public ProductReviews(int productId)
         {
             ProductId = productId;
+            Review.ProductId = productId;
         }
     }
 }
