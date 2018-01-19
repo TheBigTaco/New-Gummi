@@ -15,6 +15,7 @@ namespace GummiBear.Models
         public string Name { get; set; }
         public int Cost { get; set; }
         public string Description { get; set; }
+        public double AverageRating { get; set; }
         public byte[] Picture { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
 
@@ -34,6 +35,19 @@ namespace GummiBear.Models
         public override int GetHashCode()
         {
             return this.ProductId.GetHashCode();
+        }
+
+        public void AverageRatingFinder() 
+        {
+            int count = 0;
+            int total = 0;
+            foreach(var review in this.Reviews)
+            {
+                count++;
+                total += review.Rating;
+            }
+
+            this.AverageRating = total / count;
         }
     }
 }

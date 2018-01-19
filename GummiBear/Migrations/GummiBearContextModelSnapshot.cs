@@ -20,6 +20,8 @@ namespace GummiBear.Migrations
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<double>("AverageRating");
+
                     b.Property<int>("Cost");
 
                     b.Property<string>("Description");

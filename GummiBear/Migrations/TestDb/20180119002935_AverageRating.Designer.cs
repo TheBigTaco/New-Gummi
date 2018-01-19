@@ -8,8 +8,8 @@ using GummiBear.Models;
 namespace GummiBear.Migrations.TestDb
 {
     [DbContext(typeof(TestDbContext))]
-    [Migration("20180113070435_Initial")]
-    partial class Initial
+    [Migration("20180119002935_AverageRating")]
+    partial class AverageRating
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,8 @@ namespace GummiBear.Migrations.TestDb
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<double>("AverageRating");
 
                     b.Property<int>("Cost");
 
@@ -43,7 +45,7 @@ namespace GummiBear.Migrations.TestDb
 
                     b.Property<string>("ContentBody");
 
-                    b.Property<int?>("ProductId");
+                    b.Property<int>("ProductId");
 
                     b.Property<int>("Rating");
 
@@ -58,9 +60,10 @@ namespace GummiBear.Migrations.TestDb
 
             modelBuilder.Entity("GummiBear.Models.Review", b =>
                 {
-                    b.HasOne("GummiBear.Models.Product")
+                    b.HasOne("GummiBear.Models.Product", "Product")
                         .WithMany("Reviews")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }

@@ -15,7 +15,7 @@
     </p>
     <p>
         @Html.LabelFor(model => model.Cost)
-        @Html.TextBoxFor(model => model.Cost)
+        @Html.TextBoxFor(model => model.Cost, new { @type = "number" })
     </p>
 
     <p>
@@ -28,7 +28,7 @@
         <input type="file" id="Image" name="Image" />
     </p>
 
-    <input type="submit" value="Enter Boss" />
+    <input type="submit" value="Submit Product" />
 }
 <p>
     @Html.ActionLink("Return to product list", "Index")

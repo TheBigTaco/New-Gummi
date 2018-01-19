@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace GummiBear.Migrations
+namespace GummiBear.Migrations.TestDb
 {
     public partial class Initial : Migration
     {
@@ -32,7 +32,7 @@ namespace GummiBear.Migrations
                         .Annotation("MySql:ValueGeneratedOnAdd", true),
                     Author = table.Column<string>(nullable: true),
                     ContentBody = table.Column<string>(nullable: true),
-                    ProductId = table.Column<int>(nullable: true),
+                    ProductId = table.Column<int>(nullable: false),
                     Rating = table.Column<int>(nullable: false),
                     Title = table.Column<string>(nullable: true)
                 },
@@ -44,7 +44,7 @@ namespace GummiBear.Migrations
                         column: x => x.ProductId,
                         principalTable: "products",
                         principalColumn: "ProductId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

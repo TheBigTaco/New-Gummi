@@ -107,7 +107,8 @@ namespace GummiBear.Tests.ControllerTests
                 ProductId = 1,
                 Name = "thing",
                 Cost = 3,
-                Description = "it's a thing"
+                Description = "it's a thing",
+                AverageRating = 3
             };
 
             DbSetup();

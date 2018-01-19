@@ -21,18 +21,24 @@
 
     <p>
         @Html.LabelFor(model => model.Review.Rating)
-        @Html.TextBoxFor(model => model.Review.Rating)
+        @Html.DropDownListFor(model => model.Review.Rating, new SelectList(new List<SelectListItem> {
+            new SelectListItem { Text = "5", Value = "5"},
+        	new SelectListItem { Text = "4", Value = "4"},
+        	new SelectListItem { Text = "3", Value = "3"},
+        	new SelectListItem { Text = "2", Value = "2"},
+        	new SelectListItem { Text = "1", Value = "1"}
+	    }, "Value", "Text"))
     </p>
 
     <p>
         @Html.LabelFor(model => model.Review.ContentBody)
-        @Html.TextBoxFor(model => model.Review.ContentBody)
+        @Html.TextBoxFor(model => model.Review.ContentBody, new { @maxlength="255" })
     </p>
 
     <p>
         @Html.HiddenFor(model => model.Review.ProductId)
     </p>
-    <input type="submit" value="Enter Boss" />
+    <input type="submit" value="Submit Review" />
 }
 <p>
     @Html.ActionLink("Return to product list", "Index")

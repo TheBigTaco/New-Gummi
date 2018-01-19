@@ -41,5 +41,38 @@ namespace GummiBear.Tests.ModelTests
             Assert.AreEqual(4, product.Cost);
             Assert.AreEqual("Red", product.Description);
         }
+
+        [TestMethod]
+        public void AverageRatingFinder_CalculatesProductsAverageRating_Double()
+        {
+            Review review = new Review
+            {
+                ReviewId = 0,
+                Title = "Strawberry",
+                Author = "Me",
+                ContentBody = "Red",
+                Rating = 1,
+                ProductId = 0
+            };
+            Review review2 = new Review
+            {
+                ReviewId = 0,
+                Title = "Strawberry",
+                Author = "Me",
+                ContentBody = "Red",
+                Rating = 5,
+                ProductId = 0
+            };
+			Product product = new Product
+			{
+				ProductId = 0,
+				Name = "Strawberry",
+				Cost = 4,
+				Description = "Red",
+            };
+            product.Reviews = new List<Review>{review, review2};
+            product.AverageRatingFinder();
+            Assert.AreEqual(3, product.AverageRating);
+        }
     }
 }

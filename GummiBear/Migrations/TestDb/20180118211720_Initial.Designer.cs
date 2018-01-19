@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using GummiBear.Models;
 
-namespace GummiBear.Migrations
+namespace GummiBear.Migrations.TestDb
 {
-    [DbContext(typeof(GummiBearContext))]
-    [Migration("20180113070403_Initial")]
+    [DbContext(typeof(TestDbContext))]
+    [Migration("20180118211720_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,7 +43,7 @@ namespace GummiBear.Migrations
 
                     b.Property<string>("ContentBody");
 
-                    b.Property<int?>("ProductId");
+                    b.Property<int>("ProductId");
 
                     b.Property<int>("Rating");
 
@@ -58,9 +58,10 @@ namespace GummiBear.Migrations
 
             modelBuilder.Entity("GummiBear.Models.Review", b =>
                 {
-                    b.HasOne("GummiBear.Models.Product")
+                    b.HasOne("GummiBear.Models.Product", "Product")
                         .WithMany("Reviews")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }
