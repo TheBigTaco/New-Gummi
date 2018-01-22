@@ -6,6 +6,7 @@ using GummiBear.Models;
 using GummiBear.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
+using System.Diagnostics;
 
 namespace GummiBear.Tests.ControllerTests
 {
@@ -107,8 +108,7 @@ namespace GummiBear.Tests.ControllerTests
                 ProductId = 1,
                 Name = "thing",
                 Cost = 3,
-                Description = "it's a thing",
-                AverageRating = 3
+                Description = "it's a thing"
             };
 
             DbSetup();
@@ -116,7 +116,6 @@ namespace GummiBear.Tests.ControllerTests
 
             var resultView = controller.Details(testProduct.ProductId) as ViewResult;
             var model = resultView.ViewData.Model as Product;
-
             Assert.IsInstanceOfType(resultView, typeof(ViewResult));
             Assert.IsInstanceOfType(model, typeof(Product));
         }

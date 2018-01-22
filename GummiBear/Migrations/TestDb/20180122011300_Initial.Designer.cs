@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using GummiBear.Models;
 
-namespace GummiBear.Migrations
+namespace GummiBear.Migrations.TestDb
 {
-    [DbContext(typeof(GummiBearContext))]
-    [Migration("20180119001714_AverageRating")]
-    partial class AverageRating
+    [DbContext(typeof(TestDbContext))]
+    [Migration("20180122011300_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

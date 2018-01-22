@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace GummiBear.Migrations
+namespace GummiBear.Migrations.TestDb
 {
     public partial class Initial : Migration
     {
@@ -14,6 +14,7 @@ namespace GummiBear.Migrations
                 {
                     ProductId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGeneratedOnAdd", true),
+                    AverageRating = table.Column<double>(nullable: false),
                     Cost = table.Column<int>(nullable: false),
                     Description = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),

@@ -46,8 +46,14 @@ namespace GummiBear.Models
                 count++;
                 total += review.Rating;
             }
-
-            this.AverageRating = total / count;
+            if(count != 0)
+            {
+                this.AverageRating = total / count;
+            }
+            else
+            {
+                this.AverageRating = 0;
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ using GummiBear.Models;
 namespace GummiBear.Migrations
 {
     [DbContext(typeof(GummiBearContext))]
-    [Migration("20180118211703_Initial")]
+    [Migration("20180122011246_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,8 @@ namespace GummiBear.Migrations
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<double>("AverageRating");
 
                     b.Property<int>("Cost");
 

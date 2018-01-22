@@ -75,7 +75,10 @@ namespace GummiBear.Controllers
         public IActionResult Details(int id)
         {
             Product thisProduct = productRepo.Products.Include(product => product.Reviews).FirstOrDefault(x => x.ProductId == id);
-            thisProduct.AverageRatingFinder();
+            if(thisProduct.Reviews != null)
+            {
+                thisProduct.AverageRatingFinder();
+            }
             productRepo.Edit(thisProduct);
             return View(thisProduct);
         }
